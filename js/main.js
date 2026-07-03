@@ -206,9 +206,13 @@ function openMenuPop(card) {
 
     mpQty = 1;
     document.getElementById('mpQnum').textContent = 1;
-    document.getElementById('mpAddCart').innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
-    document.getElementById('mpAddCart').style.background = '';
 
+    const orderBtn = document.getElementById("whatsappOrder");
+
+    if (orderBtn) {
+        orderBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Order on WhatsApp';
+        orderBtn.style.background = "";
+    }
     menuPop.classList.add('open');
     document.body.style.overflow = 'hidden';
 }
@@ -259,19 +263,27 @@ document.getElementById('mpMinus').addEventListener('click', function () {
 });
 
 // Add to cart button
-document.getElementById('mpAddCart').addEventListener('click', function () {
-    var cnt = parseInt(document.getElementById('cartCount').textContent) + mpQty;
-    document.getElementById('cartCount').textContent = cnt;
-    this.innerHTML = '<i class="fas fa-check"></i> Added to Cart!';
-    this.style.background = 'linear-gradient(135deg,var(--green),#1a4a35)';
-    var self = this;
-    setTimeout(function () {
-        closeMenuPop();
-        self.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
-        self.style.background = '';
-    }, 1000);
-});
+// // WhatsApp Order Button
+// document.getElementById("mpAddCart").addEventListener("click", function () {
 
+//     const product = document.getElementById("mpTitle").textContent;
+
+//     const message =
+//         `Hello Mahiii Creation! 🌸
+
+// I would like to order:
+
+// 🧶 Product: ${product}
+
+// Please tell me how to proceed. 😊`;
+
+//     window.open(
+//         "https://wa.me/918441897087?text=" +
+//         encodeURIComponent(message),
+//         "_blank"
+//     );
+
+// });
 
 document.getElementById('resBtn').addEventListener('click', function () {
     var btn = this;
@@ -407,21 +419,36 @@ setInterval(function () {
 }, 1000);
 
 /* â”€â”€ NEWSLETTER â”€â”€ */
-document.getElementById('nlBtn').addEventListener('click', function () {
-    var email = document.getElementById('nlEmail').value;
-    if (email && email.includes('@')) {
-        var btn = this;
-        btn.textContent = 'âœ“ Subscribed!';
-        btn.style.background = '#4ade80';
-        btn.style.color = '#222';
-        document.getElementById('nlEmail').value = '';
-        setTimeout(function () {
-            btn.textContent = 'Subscribe';
-            btn.style.background = '';
-            btn.style.color = '';
-        }, 3000);
-    }
-});
+/* NEWSLETTER */
+
+const nlBtn = document.getElementById("nlBtn");
+const nlEmail = document.getElementById("nlEmail");
+
+if (nlBtn && nlEmail) {
+
+    nlBtn.addEventListener("click", function () {
+
+        const email = nlEmail.value.trim();
+
+        if (email && email.includes("@")) {
+
+            nlBtn.textContent = "✓ Subscribed!";
+            nlBtn.style.background = "#4ade80";
+            nlBtn.style.color = "#222";
+
+            nlEmail.value = "";
+
+            setTimeout(function () {
+                nlBtn.textContent = "Subscribe";
+                nlBtn.style.background = "";
+                nlBtn.style.color = "";
+            }, 3000);
+
+        }
+
+    });
+
+}
 
 /*  NUMBER COUNTER ANIMATION*/
 var numAnimated = false;
@@ -447,3 +474,53 @@ window.addEventListener('scroll', function () {
         });
     }
 });
+const whatsappBtn = document.getElementById("whatsappOrder");
+
+if (whatsappBtn) {
+
+    whatsappBtn.addEventListener("click", function (e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const product = document.getElementById("mpTitle").textContent;
+        const price = document.getElementById("mpPrice").childNodes[0].textContent.trim();
+        const qty = document.getElementById("mpQnum").textContent;
+        const note = document.getElementById("customNote").value.trim();
+
+        const image =
+            "https://maheenfareed28.github.io/Mahiii-Creation06/" +
+            document.getElementById("mpImg").getAttribute("src");
+
+        let message =
+            `🌸 Hello Mahiii Creation!
+
+I would like to order this handmade product.
+
+🧶 Product: ${product}
+💰 Price: ${price}
+📦 Quantity: ${qty}`;
+
+        if (note !== "") {
+            message += `
+
+🎁 Customization: ${note}`;
+        }
+
+        message += `
+
+🖼️ Product Image:
+${image}
+
+Please guide me further.
+
+Thank you! 💜`;
+
+        window.open(
+            "https://wa.me/918441897087?text=" + encodeURIComponent(message),
+            "_blank"
+        );
+
+    });
+
+}

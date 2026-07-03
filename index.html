@@ -34,7 +34,7 @@
       <div class="container">
          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="top-contact d-flex flex-wrap">
-               <span><i class="fas fa-phone-alt"></i>+1 (800) 123-4567</span>
+               <span><i class="fas fa-phone-alt"></i>+91 8441897087</span>
                <span><i class="fas fa-envelope"></i>mahiii_creation06@gmail.com</span>
                <span><i class="fas fa-map-marker-alt"></i>India</span>
             </div>
@@ -447,14 +447,14 @@
             </div>
             <!-- CARD 4: Wraps -->
             <div class="col-sm-6 col-lg-4 mwrap" data-c="bags" data-aos="fade-up">
-               <div class="mcard" data-img="img/category/tote bag.jpeg" data-title="Crochet Tote Bag" data-cat="Bags"
+               <div class="mcard" data-img="img/category/tote-bag.jpeg" data-title="Crochet Tote Bag" data-cat="Bags"
                   data-price="₹899" data-old="₹1099" data-rating="4.8" data-reviews="74" data-cal="100% Handmade"
                   data-time="5-7 Days"
                   data-desc="Stylish handmade crochet tote bag crafted with premium yarn. Lightweight, durable, and perfect for everyday use."
                   data-tags="Handmade,Bag,Trending">
 
                   <div class="mimg">
-                     <img src="img/category/tote bag.jpeg" alt="Crochet Tote Bag" />
+                     <img src="img/category/tote-bag.jpeg" alt="Crochet Tote Bag" />
                      <div class="mhrt"><i class="far fa-heart"></i></div>
                   </div>
 
@@ -570,27 +570,73 @@
    <!-- ============================================================
          FIX 4 � MENU DETAIL POPUP MODAL
          ============================================================ -->
+
    <div id="menuPop">
       <div class="mpbox">
-         <button class="mpclose" id="mpClose"><i class="fas fa-times"></i></button>
-         <div class="mpimg"><img id="mpImg" src="" alt="" /></div>
+
+         <button class="mpclose" id="mpClose">
+            <i class="fas fa-times"></i>
+         </button>
+
+         <div class="mpimg">
+            <img id="mpImg" src="" alt="">
+         </div>
+
          <div class="mpbody">
+
             <div id="mpCat"></div>
             <div id="mpTitle"></div>
             <div id="mpStars"></div>
             <div id="mpDesc"></div>
             <div id="mpPrice"></div>
+
             <div class="mpmeta" id="mpMeta"></div>
+
             <div class="mpqty">
-               <button class="mpqbtn" id="mpMinus">-</button>
+               <button class="mpqbtn" id="mpMinus">−</button>
                <span class="mpqnum" id="mpQnum">1</span>
                <button class="mpqbtn" id="mpPlus">+</button>
-               <span style="font-size:.82rem;color:#aaa;margin-left:9px;">Quantity</span>
+               <span style="margin-left:10px;">Quantity</span>
             </div>
+
+            <div class="mpshipping">
+               🚚 Shipping: ₹80 (Free above ₹1499)
+            </div>
+
+            <div class="mpdelivery">
+               ⏳ Delivery: 4–6 Days
+            </div>
+
+            <div class="mpnote">
+               <label>Customization (Optional)</label>
+               <textarea id="customNote" placeholder="Example: Pink flowers, gift packing, add name etc."></textarea>
+            </div>
+
             <div class="mptags" id="mpTags"></div>
-            <button class="mpaddcart" id="mpAddCart"><i class="fas fa-shopping-cart"></i>Order on Whatsapp</button>
+
+            <button class="mpaddcart" id="whatsappOrder">
+               <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </button>
+
          </div>
       </div>
+   </div>
+   <!-- Shipping -->
+   <div class="mpshipping">
+      <i class="fas fa-truck"></i>
+      Shipping: <strong>₹80</strong> (Free above ₹1499)
+   </div>
+
+   <!-- Delivery -->
+   <div class="mpdelivery">
+      <i class="fas fa-clock"></i>
+      Estimated Delivery: <strong>4–6 Days</strong>
+   </div>
+
+   <!-- Customization -->
+   <div class="mpnote">
+      <label>Customization (Optional)</label>
+      <textarea id="customNote" placeholder="Example: Pink roses, add name 'Ayesha', gift packing etc."></textarea>
    </div>
    <!-- SPECIAL OFFER -->
    <section id="special">
