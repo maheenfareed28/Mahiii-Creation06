@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Sarab">
+    <link rel="icon" type="image/png" href="img/logo.jpeg">
+    <meta name="description" content="Sarab - Fast Food & Restaurant HTML Template">
+    <title>Mahiii Creation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap 5.3 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- AOS Animate on Scroll -->
+    <link href="css/aos.css" rel="stylesheet" />
+    <!-- Swiper -->
+    <link href="css/swiper-bundle.min.css" rel="stylesheet" />
+    <!-- all min css -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- magnific CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- ============================================================
+         TOP BAR
+         ============================================================ -->
+    <div id="topbar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div class="top-contact d-flex flex-wrap">
+                    <span><i class="fas fa-phone-alt"></i>+91 8441897087</span>
+                    <span><i class="fas fa-envelope"></i>mahiii_creation06@gmail.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i>India</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="ttag"><i class="fas fa-fire me-1"></i>Worldwide Shipping Available!</span>
+                    <div class="tsoc">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a
+                            href="https://www.instagram.com/mahiii_creation06?igsh=MTJzNTdpdWhrNXEycw%3D%3D&utm_source=qr"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@mahiii_creation06?si=y1d1FblT5YzJp3zn"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================
+         NAVBAR
+         ============================================================ -->
+    <nav class="navbar navbar-expand-lg" id="nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="blogo">
+                    <div class="bico"> <img src="img/logo1.png" alt="Mahiii Creation Logo">
+                    </div>
+                    <div>
+                        <div class="bname">Mahiii<span>Creation</span></div>
+                        <div class="bsub">Crochet & Custom Gifts </div>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <i class="fas fa-bars" style="color:var(--prima ry);font-size:1.35rem;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#hero">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#menu">Collections</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#chefs">Best Seller</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#reservation">Custom Orders</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonials">Reviews</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+                <!-- FIX 1: Search button -->
+                <button id="navSearchBtn" title="Search"><i class="fas fa-search"></i></button>
+                <a href="#menu" class="nav-link nav-cta"><i class="fas fa-shopping-bag me-1"></i>Shop Now</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- ============================================================
+         FIX 1 � SEARCH OVERLAY POPUP
+         ============================================================ -->
+    <div id="searchOv">
+        <button class="sovclose" id="searchClose"><i class="fas fa-times"></i></button>
+        <div class="sovbox">
+            <h4>Find the perfect handmade crochet gift.</h4>
+            <div class="sovinput">
+                <input type="text" id="searchInput" placeholder="Search bouquets, keychains, flowers..."
+                    autocomplete="off" />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <!-- Categories inside search box -->
+            <div class="sovcats">
+                <div class="sovcat active" data-cat="all">
+                    <img src="img/logo.jpeg" alt="" />All Items
+                </div>
+                <div class="sovcat" data-cat="burgers">
+                    <img src="img/bouquet.jpeg" alt="" />Bouquets
+                </div>
+                <div class="sovcat" data-cat="pizza">
+                    <img src="img/menu/purple clw.jpeg" alt="" />Accessories
+                </div>
+                <div class="sovcat" data-cat="chicken">
+                    <img src="img/menu/Rose flower.jpeg" alt="" />Flowers
+                </div>
+                <div class="sovcat" data-cat="wraps">
+                    <img src="img/menu/bag.jpeg" alt="" />Crochet Bags
+                </div>
+                <div class="sovcat" data-cat="pasta">
+                    <img src="img/menu/women cardigan.jpeg" alt="" />Plushies
+                </div>
+                <div class="sovcat" data-cat="desserts">
+                    <img src="img/menu/ramadan gift hamper.jpeg" alt="" />Gift Hampers
+                </div>
+            </div>
+            <div class="sovtrend">
+                <p><i class="fas fa-fire me-1" style="color:var(--secondary);"></i>Popular Searches</p>
+                <span class="ttag">Crochet Bouquet</span>
+                <span class="ttag">Rose Bouquet</span>
+                <span class="ttag">Accessories</span>
+                <span class="ttag">Crochet Keychain</span>
+                <span class="ttag">Crochet Bag</span>
+                <span class="ttag">Custom Gift</span>
+            </div>
+        </div>
+    </div>
+    <!-- FIX 6 � CONTACT FORM
+    ============================================================ -->
+    <section id="contact-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="slbl">Get In Touch</span>
+                <h2 class="stitle">Contact <span>Us</span></h2>
+                <div class="sline"></div>
+                <p class="sdesc mx-auto" style="max-width:480px;">Have a question, feedback, or want to plan a special
+                    event? We'd love to hear from you.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="ctdark">
+                        <h4>Let's Talk</h4>
+                        <p class="ctsub">We typically respond within 2 hours during business hours.</p>
+                        <div class="ctitem">
+                            <div class="cticon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="ctinfo"><strong>Address</strong><span>Tonk, Rajasthan<br /> India, IN
+                                    304001</span></div>
+                        </div>
+                        <div class="ctitem">
+                            <div class="cticon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="ctinfo"><strong>Phone</strong><span>+91 8441897087
+                                </span></div>
+                        </div>
+                        <div class="ctitem">
+                            <div class="cticon"><i class="fas fa-envelope"></i></div>
+                            <div class="ctinfo"><strong>Email</strong><span>queries.mahiicreation@gmail.com</span></div>
+                        </div>
+                        <div class="ctitem">
+                            <div class="cticon"><i class="fas fa-clock"></i></div>
+                            <div class="ctinfo"><strong>Working Hours</strong><span>24/7 Available</span></div>
+                        </div>
+                        <div class="ctsocrow">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="@mahiii_creation06"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="fcard">
+                        <div class="row g-3">
+                            <div class="col-sm-6"><label class="flbl">Your Name *</label><input type="text"
+                                    class="fctrl" placeholder="Enter your name" /></div>
+                            <div class="col-sm-6"><label class="flbl">Email Address *</label><input type="email"
+                                    class="fctrl" placeholder="you@email.com" /></div>
+                            <div class="col-sm-6"><label class="flbl">Phone Number</label><input type="tel"
+                                    class="fctrl" placeholder="+91 (800) 000-0000" /></div>
+                            <div class="col-sm-6">
+                                <label class="flbl">Subject *</label>
+                                <select class="fctrl">
+                                    <option>General Inquiry</option>
+                                    <option>Catering &amp; Events</option>
+                                    <option>Feedback</option>
+                                    <option>Partnership</option>
+                                    <option>Media &amp; Press</option>
+                                </select>
+                            </div>
+                            <div class="col-12"><label class="flbl">Message *</label><textarea class="fctrl" rows="5"
+                                    placeholder="Write your message here..."></textarea></div>
+                            <div class="col-12"><button class="btn-red" id="ctcBtn"><i
+                                        class="fas fa-paper-plane"></i>Send
+                                    Message</button></div>
+                        </div>
+                        <div class="sucmsg" id="ctcOk">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Message sent! We'll reply within 2 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center">
+                        <img src="img/logo.jpeg" style="width:60px;" class="me-2">
+                        <div class="fnm">Mahiii<span>Creation</span></div>
+                    </div>
+                    <p class="fdesc">Creating handmade crochet gifts and handpainted suits with love and creativity.
+                        Every
+                        piece is uniquely crafted to make your special moments unforgettable.</p>
+                    <div class="fsoc">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="ftit">Our Collection</div>
+                    <ul class="flinks ps-0">
+                        <li><a href="#hero"><i class="fas fa-chevron-right"></i>Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i>Our Menu</a></li>
+                        <li><a href="#reservation"><i class="fas fa-chevron-right"></i>Custom Orders</a></li>
+                        <li><a href="#contact-section"><i class="fas fa-chevron-right"></i>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="ftit">Our Collections</div>
+                    <ul class="flinks ps-0">
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i>Bouquets</a></li>
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i>Flower</a></li>
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i>Keychains</a></li>
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i>Earrings &amp; Accessories</a></li>
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i>Bag</a></li>
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i>Flower</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ftit">Get In Touch</div>
+                    <div class="fci">
+                        <div class="fciico"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="fciinfo"><strong>Address</strong>Tonk, Rajasthan, India - 304001</div>
+                    </div>
+                    <div class="fci">
+                        <div class="fciico"><i class="fas fa-phone-alt"></i></div>
+                        <div class="fciinfo"><strong>Phone</strong>+91 8441897087</div>
+                    </div>
+                    <div class="fci">
+                        <div class="fciico"><i class="fas fa-envelope"></i></div>
+                        <div class="fciinfo"><strong>Email</strong>queries.mahiicreation@gmail.com</div>
+                    </div>
+                    <div class="fci">
+                        <div class="fciico"><i class="fas fa-clock"></i></div>
+                        <div class="fciinfo"><strong>Hours</strong>24/7 Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fbot">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <p>&copy 2026 <span>Mahiii Creation</span>. All Rights Reserved. <a target="_blank"
+                            class="mx-0 fw-bold text-success" href=""></a> <span><i class="fas fa-heart"></i></span>
+                        <br><a target="_blank" class="mx-0 fw-bold text-success" href=""></a>
+                    </p>
+                    <div><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Floating cart -->
+    <!-- <div class="cartfl"><i class="fas fa-shopping-cart"></i><span>My Cart</span><div class="ccount" id="cartCount">0</div></div> -->
+    <!-- Back to top -->
+    <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap 5 -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- AOS -->
+    <script src="js/aos.js"></script>
+    <!-- Swiper -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- CounterUp -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- Main js -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

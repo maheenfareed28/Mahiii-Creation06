@@ -245,14 +245,18 @@ section {
   font-size: 1.35rem;
   color: var(--primary);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+
 }
 
 .stitle {
   font-size: clamp(1.9rem, 4vw, 2.7rem);
   font-weight: 900;
   line-height: 1.2;
-  margin-bottom: 12px;
+  margin-top: 0;
+  margin-bottom: 15px;
+
 }
 
 .stitle span {
@@ -1183,65 +1187,6 @@ section {
   font-weight: 900;
 }
 
-/* ===================== GALLERY ===================== */
-#gallery {
-  background: var(--light);
-}
-
-.ggrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 215px);
-  gap: 13px;
-}
-
-.gitem {
-  border-radius: 14px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
-
-.gitem:first-child {
-  grid-row: span 2;
-}
-
-.gitem img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.5s;
-}
-
-.gitem:hover img {
-  transform: scale(1.08);
-}
-
-.gover {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.76), transparent 60%);
-  opacity: 0;
-  transition: 0.4s;
-  display: flex;
-  align-items: flex-end;
-  padding: 18px;
-}
-
-.gitem:hover .gover {
-  opacity: 1;
-}
-
-.gover span {
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.88rem;
-}
-
-.gover i {
-  color: var(--secondary);
-  margin-right: 5px;
-}
 
 /* ===================== HISTORY â€” FIX 8 ===================== */
 #history {
@@ -1636,6 +1581,11 @@ section {
 /* ===================== RESERVATION â€” FIX 5 ===================== */
 #reservation {
   background: var(--light);
+  padding-top: 120px;
+  padding-bottom: 80px;
+  scroll-margin-top: 110px;
+
+
 }
 
 .resico {
