@@ -1,4 +1,4 @@
-const products = [
+window.products = [
     // Phone Covers
 
     {
@@ -185,3 +185,4 @@ const products = [
     }
 
 ];
+

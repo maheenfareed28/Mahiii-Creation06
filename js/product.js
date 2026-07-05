@@ -215,46 +215,54 @@ function orderWhatsapp() {
     const model = document.getElementById("phoneModel").value.trim();
 
     if (model === "") {
-
         alert("Please enter your phone model.");
-
         return;
-
     }
 
     const qty = Number(document.getElementById("qty").value);
-
     const note = document.getElementById("note").value;
 
-    const shipping = 80;
+    const deliveryCharge = 80;
+    const subtotal = product.price * qty;
+    const total = subtotal + deliveryCharge;
 
-    const productTotal = product.price * qty;
-
-    const total = productTotal + shipping;
+    const imageLink = `https://mahiii-creation.netlify.app/${product.image}`;
+    const productLink = `https://mahiii-creation.netlify.app/product.html?id=${product.id}`;
 
     const message = `🛍️ New Order
 
 Product : ${product.name}
 
-Price (Each) : ₹${product.price}
+Price : ₹${product.price}
 
 Quantity : ${qty}
 
-Product Total : ₹${productTotal}
+Subtotal : ₹${subtotal}
 
-Shipping (India) : ₹${shipping}
+Delivery Charges :
+₹${deliveryCharge} (Within India)
 
-Grand Total : ₹${total}
+International Shipping :
+Calculated separately based on destination country.
 
-📱 Phone Model : ${model}
+Total : ₹${total}
 
-📝 Special Instructions :
-${note}
+Phone Model :
+${model}
 
-*For international orders, shipping charges will be shared separately.*`;
+Special Instructions :
+${note || "None"}
+
+Product Image :
+${imageLink}
+
+Product Link :
+${productLink}`;
 
     const url = `https://wa.me/918441897087?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
 
 }
+
+

@@ -116,7 +116,10 @@ img {
   background: var(--cream);
   position: sticky;
   top: 0;
-  z-index: 990;
+  padding: 10px 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  z-index: 999;
   box-shadow: 0 12px 30px rgba(181, 126, 220, .25);
   transition: 0.4s;
 }
@@ -132,8 +135,8 @@ img {
 }
 
 .bico {
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   display: flex;
@@ -152,7 +155,7 @@ img {
 
 .bname {
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 900;
   color: var(--dark);
 }
@@ -162,7 +165,7 @@ img {
 }
 
 .bsub {
-  font-size: 0.62rem;
+  font-size: .75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #aaa;
@@ -196,6 +199,21 @@ img {
 
 .navbar-nav .nav-link:hover {
   color: var(--primary) !important;
+}
+
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 8px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.navbar-toggler i {
+  font-size: 30px;
+  color: #8b5cf6;
 }
 
 /* FIX 1 â€” Search btn in navbar */
@@ -233,6 +251,134 @@ img {
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(232, 40, 26, 0.4);
+}
+
+/* Search Popup Button */
+
+.sovinput {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 14px 60px 14px 18px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  transition: .3s;
+}
+
+#searchInput:focus {
+  border-color: var(--primary);
+}
+
+#searchBtn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#searchBtn:hover {
+  background: var(--secondary);
+  transform: translateY(-50%) scale(1.05);
+}
+
+#searchResults {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.search-item:hover {
+  background: #f7f2ff;
+}
+
+.search-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.search-item h6 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.search-item p {
+  margin: 2px 0 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+#searchResults img {
+
+  height: 250px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+}
+
+#searchInput {
+
+  height: 55px;
+
+  font-size: 18px;
+
+  border-radius: 12px;
+
+}
+
+/* ===========================
+   Navbar Mobile Toggle
+=========================== */
+
+.navbar-toggler {
+  border: none !important;
+  background: transparent;
+  padding: 8px;
+  margin-left: auto;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.navbar-toggler i {
+  font-size: 32px;
+  color: var(--dark);
+  transition: .3s ease;
+}
+
+.navbar-toggler:hover i {
+  color: var(--primary);
 }
 
 /* ===================== SECTION COMMONS ===================== */
@@ -316,11 +462,12 @@ section {
 /* ===================== HERO ===================== */
 #hero {
   background: var(--cream);
-  min-height: 92vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+
 }
 
 .hbgtxt {

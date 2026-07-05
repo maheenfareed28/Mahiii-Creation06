@@ -51,22 +51,22 @@ document.querySelectorAll('a[href^="#"]').forEach(function (a) {
 });
 
 
-var searchOv = document.getElementById('searchOv');
+// var searchOv = document.getElementById('searchOv');
 
-document.getElementById('navSearchBtn').addEventListener('click', function () {
-    searchOv.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    setTimeout(function () {
-        document.getElementById('searchInput').focus();
-    }, 220);
-});
+// document.getElementById('navSearchBtn').addEventListener('click', function () {
+//     searchOv.classList.add('open');
+//     document.body.style.overflow = 'hidden';
+//     setTimeout(function () {
+//         document.getElementById('searchInput').focus();
+//     }, 220);
+// });
 
-document.getElementById('searchClose').addEventListener('click', closeSearch);
+// document.getElementById('searchClose').addEventListener('click', closeSearch);
 
-// Close when clicking backdrop
-searchOv.addEventListener('click', function (e) {
-    if (e.target === searchOv) closeSearch();
-});
+// // Close when clicking backdrop
+// searchOv.addEventListener('click', function (e) {
+//     if (e.target === searchOv) closeSearch();
+// });
 
 function closeSearch() {
     searchOv.classList.remove('open');
@@ -485,3 +485,53 @@ Thank you! 💜`;
     });
 
 }
+
+window.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.getElementById("searchInput");
+    const results = document.getElementById("searchResults");
+
+    if (!input || !results || typeof products === "undefined") return;
+
+    input.addEventListener("keyup", function () {
+
+        const keyword = input.value.trim().toLowerCase();
+
+        results.innerHTML = "";
+
+        if (keyword === "") {
+            results.style.display = "none";
+            return;
+        }
+
+        const matched = products.filter(p =>
+            p.name.toLowerCase().includes(keyword) ||
+            p.category.toLowerCase().includes(keyword)
+        );
+
+        if (matched.length === 0) {
+            results.style.display = "block";
+            results.innerHTML =
+                "<div class='search-item'>No products found.</div>";
+            return;
+        }
+
+        results.style.display = "block";
+
+        matched.forEach(product => {
+
+            results.innerHTML += `
+                <div class="search-item" onclick="location.href='product.html?id=${product.id}'">
+                    <img src="${product.image}">
+                    <div>
+                        <strong>${product.name}</strong><br>
+                        ₹${product.price}
+                    </div>
+                </div>
+            `;
+
+        });
+
+    });
+
+});
