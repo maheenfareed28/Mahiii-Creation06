@@ -285,22 +285,90 @@ document.getElementById('mpMinus').addEventListener('click', function () {
 
 // });
 
-document.getElementById('resBtn').addEventListener('click', function () {
-    var btn = this;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
-    btn.disabled = true;
-    setTimeout(function () {
-        btn.innerHTML = '<i class="fas fa-calendar-check"></i> Confirm Reservation';
-        btn.disabled = false;
-        var ok = document.getElementById('resOk');
-        ok.style.display = 'block';
-        ok.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest'
-        });
-    }, 1500);
-});
+document.getElementById("resBtn").addEventListener("click", function (e) {
 
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const category = document.getElementById("category").value;
+    const date = document.getElementById("date").value;
+    const contact = document.getElementById("contact").value;
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !phone || !email || !message) {
+        alert("Please fill all required fields.");
+        return;
+    }
+
+    const subject = "New Custom Order Request";
+
+    const body = `🌸 New Custom Order Request
+
+Name: ${name}
+
+Phone: ${phone}
+
+Email: ${email}
+
+Category: ${category}
+
+Required By: ${date}
+
+Preferred Contact: ${contact}
+
+Order Details:
+
+${message}`;
+
+    // ===== Preferred Contact Method =====
+
+    if (contact === "WhatsApp") {
+
+        window.open(
+            "https://wa.me/918441897087?text=" +
+            encodeURIComponent(body),
+            "_blank"
+        );
+
+    }
+
+    else if (contact === "Email") {
+
+        window.location.href =
+            `mailto:queries.mahiicreation@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    }
+
+    else if (contact === "Phone Call") {
+
+        window.location.href = "tel:+918441897087";
+
+    }
+
+    else if (contact === "Instagram") {
+
+        window.open(
+            "https://instagram.com/mahiii_creation06",
+            "_blank"
+        );
+
+    }
+
+    // Success Message
+    document.getElementById("resOk").style.display = "block";
+
+    // Reset Form
+    document.getElementById("name").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("category").selectedIndex = 0;
+    document.getElementById("date").value = "";
+    document.getElementById("contact").selectedIndex = 0;
+    document.getElementById("message").value = "";
+
+});
 
 document.getElementById('ctcBtn').addEventListener('click', function () {
     var btn = this;
