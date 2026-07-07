@@ -182,7 +182,42 @@ window.products = [
         price: 249,
         image: "img/keychains/key1.jpeg",
         description: "Cute crochet keychain."
-    }
+    },
+    {
+        id: 502,
+        category: "flowers",
+        name: "Tulip Bouquet",
+        price: 699,
+        image: "img/flowers/tulip.jpeg",
+        description: "Handmade Tulip Bouquet"
+    },
+];
+
+
+
+// ================================
+// POPULAR PRODUCTS (Home Page)
+// ================================
+
+window.popularProducts = [
+
+    // Phone Covers
+    1,
+    2,
+    3,
+    11,
+
+    // Bouquet
+    101,
+
+    // Flower
+    201,
+    502,
+
+    // Keychain
+    301
 
 ];
 
+console.log(window.products);
+console.log(window.popularProducts);

@@ -422,30 +422,45 @@ new Swiper('.tesSwiper', {
         }
     }
 });
+/* SPECIAL OFFER*/
 
+const cdH = document.getElementById("cdH");
+const cdM = document.getElementById("cdM");
+const cdS = document.getElementById("cdS");
 
-var cH = 8,
-    cM = 45,
-    cS = 30;
-setInterval(function () {
-    cS--;
-    if (cS < 0) {
-        cS = 59;
-        cM--;
-    }
-    if (cM < 0) {
-        cM = 59;
-        cH--;
-    }
-    if (cH < 0) {
-        cH = 8;
-        cM = 45;
-        cS = 30;
-    }
-    document.getElementById('cdH').textContent = String(cH).padStart(2, '0');
-    document.getElementById('cdM').textContent = String(cM).padStart(2, '0');
-    document.getElementById('cdS').textContent = String(cS).padStart(2, '0');
-}, 1000);
+if (cdH && cdM && cdS) {
+
+    let cH = 8;
+    let cM = 45;
+    let cS = 30;
+
+    setInterval(function () {
+
+        cS--;
+
+        if (cS < 0) {
+            cS = 59;
+            cM--;
+        }
+
+        if (cM < 0) {
+            cM = 59;
+            cH--;
+        }
+
+        if (cH < 0) {
+            cH = 8;
+            cM = 45;
+            cS = 30;
+        }
+
+        cdH.textContent = String(cH).padStart(2, "0");
+        cdM.textContent = String(cM).padStart(2, "0");
+        cdS.textContent = String(cS).padStart(2, "0");
+
+    }, 1000);
+
+}
 
 /* â”€â”€ NEWSLETTER â”€â”€ */
 /* NEWSLETTER */
@@ -603,3 +618,246 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+// // =============================
+// // HOME PAGE POPULAR PRODUCTS
+// // =============================
+
+// window.addEventListener("DOMContentLoaded", function () {
+
+//     const container = document.getElementById("popularProductsContainer");
+
+//     console.log("Container:", container);
+
+//     if (!container) return;
+
+//     container.innerHTML = "";
+
+//     console.log("Products:", window.products);
+//     console.log("Popular IDs:", window.popularProducts);
+
+//     const popular = (window.products || []).filter(product =>
+//         (window.popularProducts || []).includes(product.id)
+//     );
+
+//     console.log(popular);
+//     console.log("Filtered Products:", popular);
+
+//     popular.forEach(product => {
+
+//         console.log("Rendering:", product.name);
+
+//         container.innerHTML += `
+
+// <div class="col-lg-3 col-md-4 col-sm-6">
+
+// <div class="mcard"
+
+// data-img="${product.image}"
+
+// data-title="${product.name}"
+
+// data-cat="${product.category}"
+
+// data-price="₹${product.price}"
+
+// data-old=""
+
+// data-rating="5"
+
+// data-reviews="20"
+
+// data-cal="Handmade"
+
+// data-time="3-5 Days"
+
+// data-desc="${product.description}"
+
+// data-tags="Handmade,Crochet,Gift">
+
+// <div class="mimg">
+
+// <img src="${product.image}" alt="${product.name}">
+
+// </div>
+
+// <div class="mbody">
+
+// <h5>${product.name}</h5>
+
+// <div class="mprice">
+
+// ₹${product.price}
+
+// </div>
+
+// </div>
+
+// <div class="mfoot">
+
+// <button class="btn-red whatsapp-home-order"
+
+// data-name="${product.name}"
+
+// data-price="${product.price}"
+
+// data-image="${product.image}">
+
+// <i class="fab fa-whatsapp"></i>
+
+// Order Now
+
+// </button>
+
+// </div>
+
+// </div>
+
+// </div>
+
+// `;
+
+//     });
+
+// });
+// ========================================
+// POPULAR PRODUCTS
+// ========================================
+
+window.addEventListener("DOMContentLoaded", function () {
+
+    const container = document.getElementById("popularProductsContainer");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const popular = window.products.filter(product =>
+        window.popularProducts.includes(product.id)
+    );
+
+    popular.forEach(product => {
+
+        container.innerHTML += `
+
+<div class="col-lg-3 col-md-6">
+
+<div class="mcard"
+
+data-img="${product.image}"
+data-title="${product.name}"
+data-cat="${product.category}"
+data-price="₹${product.price}"
+data-old=""
+data-rating="5"
+data-reviews="20"
+data-cal="100% Handmade"
+data-time="3-5 Days"
+data-desc="${product.description}"
+data-tags="Crochet, Handmade, Gift">
+
+<div class="mimg">
+
+<img src="${product.image}" alt="${product.name}">
+
+</div>
+
+<div class="mbody">
+
+<span class="mcat">${product.category}</span>
+
+<h5 class="mtit">${product.name}</h5>
+
+<p class="mdesc">${product.description}</p>
+
+<div class="mfoot">
+
+<div class="mprice">
+
+₹${product.price}
+
+</div>
+
+<button class="madd">
+
+<i class="fas fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+    });
+
+
+
+    // Popup Again Attach
+
+    document.querySelectorAll("#popularProductsContainer .mcard").forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            openMenuPop(this);
+
+        });
+
+    });
+
+});
+// =============================
+// HOME PAGE WHATSAPP BUTTON
+// =============================
+
+document.addEventListener("click", function (e) {
+
+    if (!e.target.closest(".whatsapp-home-order")) return;
+
+    const btn = e.target.closest(".whatsapp-home-order");
+
+    const name = btn.dataset.name;
+    const price = btn.dataset.price;
+    const image = btn.dataset.image;
+
+    const url =
+        "https://maheenfareed28.github.io/Mahiii-Creation06/" + image;
+
+    const message = `🌸 Hello Mahiii Creation!
+
+I would like to order this handmade product.
+
+🧶 Product: ${name}
+
+💰 Price: ₹${price}
+
+🖼️ Product Image:
+${url}
+
+Please guide me further.
+
+Thank you! 💜`;
+
+    window.open(
+        "https://wa.me/918441897087?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+
+});
+setTimeout(function () {
+
+    document.querySelectorAll(".mcard").forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            openMenuPop(this);
+
+        });
+
+    });
+
+}, 300);
