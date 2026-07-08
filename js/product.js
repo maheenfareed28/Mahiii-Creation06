@@ -16,19 +16,17 @@ if (!product) {
 
 <div class="product-card">
 
-<div class="row align-items-center">
+<div class="container-fluid">
 
-<div class="col-lg-6">
+<div class="row g-5 align-items-start">
 
-<div class="product-image">
+<div class="col-lg-6 col-md-12">
 
 <img src="${product.image}" class="img-fluid" alt="${product.name}">
 
 </div>
 
-</div>
-
-<div class="col-lg-6">
+<div class="col-lg-6 col-md-12">
 
 <h2 class="product-title">${product.name}</h2>
 
@@ -180,13 +178,13 @@ Order on WhatsApp
 
 </button>
 
-</div>
+</div> <!-- second column -->
 
-</div>
+</div> <!-- row -->
 
-</div>
+</div> <!-- container -->
 
-</div>
+</div> <!-- product-card -->
 
 `;
 
