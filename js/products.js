@@ -160,7 +160,7 @@ window.products = [
         category: "bouquet",
         name: "Rose Bouquet",
         price: 799,
-        image: "img/bouquet/bouquet1.jpeg",
+        image: "img/bouquet.jpeg",
         description: "Handmade crochet bouquet."
     },
     // Flowers
@@ -180,7 +180,7 @@ window.products = [
         category: "keychains",
         name: "Crochet Keychain",
         price: 249,
-        image: "img/keychains/key1.jpeg",
+        image: "img/category/key-charm.jpeg",
         description: "Cute crochet keychain."
     },
     {

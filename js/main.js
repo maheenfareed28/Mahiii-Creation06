@@ -218,19 +218,19 @@ function openMenuPop(card) {
 }
 
 // Card click open popup
-document.querySelectorAll('.mcard').forEach(function (card) {
-    card.addEventListener('click', function () {
-        openMenuPop(this);
-    });
-});
+// document.querySelectorAll('.mcard').forEach(function (card) {
+//     card.addEventListener('click', function () {
+//         openMenuPop(this);
+//     });
+// });
 
 // + button  open popup (stop propagation to avoid double firing)
-document.querySelectorAll('.madd').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        openMenuPop(this.closest('.mcard'));
-    });
-});
+// document.querySelectorAll('.madd').forEach(function (btn) {
+//     btn.addEventListener('click', function (e) {
+//         e.stopPropagation();
+//         openMenuPop(this.closest('.mcard'));
+//     });
+// });
 
 // Heart toggle (no popup)
 document.querySelectorAll('.mhrt').forEach(function (btn) {
@@ -518,57 +518,120 @@ window.addEventListener('scroll', function () {
         });
     }
 });
-const whatsappBtn = document.getElementById("whatsappOrder");
+// const whatsappBtn = document.getElementById("whatsappOrder");
 
-if (whatsappBtn) {
+// if (whatsappBtn) {
 
-    whatsappBtn.addEventListener("click", function (e) {
+//     whatsappBtn.addEventListener("click", function (e) {
+
+//         e.preventDefault();
+//         e.stopPropagation();
+
+//         const product = document.getElementById("mpTitle").textContent;
+//         const price = document.getElementById("mpPrice").childNodes[0].textContent.trim();
+//         const qty = document.getElementById("mpQnum").textContent;
+//         const note = document.getElementById("customNote").value.trim();
+
+//         const image =
+//             "https://mahiii-creation.netlify.app/" +
+//             document.getElementById("mpImg").getAttribute("src");
+
+//         let message =
+//             `🌸 Hello Mahiii Creation!
+
+// I would like to order this handmade product.
+
+// 🧶 Product: ${product}
+// 💰 Price: ${price}
+// 📦 Quantity: ${qty}`;
+
+//         if (note !== "") {
+//             message += `
+
+// 🎁 Customization: ${note}`;
+//         }
+
+//         message += `
+
+// 🖼️ Product Image:
+// ${image}
+
+// Please guide me further.
+
+// Thank you! 💜`;
+
+//         window.open(
+//             "https://wa.me/918441897087?text=" + encodeURIComponent(message),
+//             "_blank"
+//         );
+
+//     });
+
+// }
+
+document.addEventListener("click", function (e) {
+
+    if (e.target.closest("#whatsappOrder")) {
 
         e.preventDefault();
-        e.stopPropagation();
 
-        const product = document.getElementById("mpTitle").textContent;
+        const product = document.getElementById("mpTitle").innerText;
         const price = document.getElementById("mpPrice").childNodes[0].textContent.trim();
-        const qty = document.getElementById("mpQnum").textContent;
-        const note = document.getElementById("customNote").value.trim();
+        const qty = document.getElementById("mpQnum").innerText;
 
-        const image =
-            "https://mahiii-creation.netlify.app/" +
-            document.getElementById("mpImg").getAttribute("src");
+        const noteBox = document.getElementById("customNote");
+        const note = noteBox ? noteBox.value.trim() : "";
 
-        let message =
-            `🌸 Hello Mahiii Creation!
+        const shipping = 80;
+
+        const total =
+            Number(price.replace(/[^\d]/g, "")) * Number(qty) + shipping;
+
+        const message = `🌸 Hello Mahiii Creation!
 
 I would like to order this handmade product.
 
-🧶 Product: ${product}
-💰 Price: ${price}
-📦 Quantity: ${qty}`;
+━━━━━━━━━━━━━━━━━━
+🛍️ PRODUCT DETAILS
+━━━━━━━━━━━━━━━━━━
 
-        if (note !== "") {
-            message += `
+📦 Product:
+${product}
 
-🎁 Customization: ${note}`;
-        }
+💰 Price:
+${price}
 
-        message += `
+🔢 Quantity:
+${qty}
 
-🖼️ Product Image:
-${image}
+🎨 Customization:
+${note || "None"}
 
-Please guide me further.
+━━━━━━━━━━━━━━━━━━
+🚚 SHIPPING
+━━━━━━━━━━━━━━━━━━
 
-Thank you! 💜`;
+Shipping (India): ₹80
+
+International Shipping:
+Calculated separately after confirmation.
+
+━━━━━━━━━━━━━━━━━━
+💜 TOTAL
+━━━━━━━━━━━━━━━━━━
+
+₹${total}
+
+Thank you ❤️`;
 
         window.open(
             "https://wa.me/918441897087?text=" + encodeURIComponent(message),
             "_blank"
         );
 
-    });
+    }
 
-}
-
+});
 window.addEventListener("DOMContentLoaded", function () {
 
     const input = document.getElementById("searchInput");
@@ -619,29 +682,93 @@ window.addEventListener("DOMContentLoaded", function () {
 
 });
 
-new Swiper(".popularSwiper", {
+// new Swiper(".popularSwiper", {
 
-    loop: true,
+//     loop: true,
 
-    slidesPerView: 1,
+//     slidesPerView: 1,
 
-    centeredSlides: true,
+//     centeredSlides: true,
 
-    spaceBetween: 30,
+//     spaceBetween: 30,
 
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
+//     autoplay: {
+//         delay: 2500,
+//         disableOnInteraction: false,
+//     },
 
-    pagination: {
-        el: ".popularSwiper .swiper-pagination",
-        clickable: true,
-    },
+//     pagination: {
+//         el: ".popularSwiper .swiper-pagination",
+//         clickable: true,
+//     },
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    }
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//     }
 
-});
+// });
+
+function orderPopularProduct(name, price, description) {
+
+    const shippingIndia = 80;
+
+    const message = `🌸 Hello Mahiii Creation!
+
+I would like to order this product.
+
+━━━━━━━━━━━━━━━━━━
+🛍️ PRODUCT DETAILS
+━━━━━━━━━━━━━━━━━━
+
+📦 Product :
+${name}
+
+💰 Price :
+₹${price}
+
+📝 Description :
+${description}
+
+━━━━━━━━━━━━━━━━━━
+📱 ORDER DETAILS
+━━━━━━━━━━━━━━━━━━
+
+📱 Phone Model (If Applicable) :
+_____________________
+
+🔢 Quantity :
+1
+
+🎨 Customization :
+_____________________
+
+━━━━━━━━━━━━━━━━━━
+💳 PRICE SUMMARY
+━━━━━━━━━━━━━━━━━━
+
+Product Price :
+₹${price}
+
+Delivery Charges (India) :
+₹${shippingIndia}
+
+International Shipping :
+Calculated separately according to destination country.
+
+━━━━━━━━━━━━━━━━━━
+💜 TOTAL
+━━━━━━━━━━━━━━━━━━
+
+₹${price + shippingIndia}
+
+Thank you ❤️
+I look forward to your confirmation.`;
+
+    window.open(
+        `https://wa.me/918441897087?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+
+}
+
